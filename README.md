@@ -74,10 +74,10 @@
 ## Create your own application
 
   ### Configuration
-  - Create new dynamic web project
-  - Convert project to maven project ( right click > configure > )
-  - Modify pom.xml ( copy from another project )
-  - Modify web.xml ( copy from another project )
+  1. Create new dynamic web project
+  2. Convert project to maven project ( right click > configure > )
+  3. Modify pom.xml ( copy from another project )
+  4. Modify web.xml ( copy from another project )
   ### Packaging
   - model : for storing your models
   - controller : for your rest api controllers
@@ -85,31 +85,34 @@
   - utils : for your utilitairies classes
   - repository : for your database operations
   ### Classes
-   In our case, models classes declaration begins with 
-   	> @XmlRootElement(name = "employee") 
-   	leaving the attribute name will take your class name by default
-   A rest api controller should always start with these annotations
-   	> @Path("/route")
-	> @Consumes(MediaType.APPLICATION_XML)
-	> @Produces(MediaType.APPLICATION_XML)
-  These will tell that our route is /route and the body of our HTTP request will be XML for both consuming and exposing.
-  Every method inside this controller will have their own route defined with annotations above the declaration
-  	> @Path("/subroute")
-  HTTP method can also be described e.g 
-  	> @GET
-	> @POST
-	> @DELETE
-	> @PUT
-  To get parameters from URIs, an id for example, you can define them in your route then using the annotation
-  	> @Path("/route/{id})
-	> public void getElement(@PathParam("id") int id)
+  - In our case, models classes declaration begins with  `@XmlRootElement(name = "employee")` leaving the attribute name will take your class name by default.
+  - A rest api controller should always start with these annotations
+ ```
+  > @Path("/route")
+  > @Consumes(MediaType.APPLICATION_XML)
+  > @Produces(MediaType.APPLICATION_XML)
+```
+These will tell that our route is /route and the body of our HTTP request will be XML for both consuming and exposing.
+  - Every method inside this controller will have their own route defined with annotations above the declaration `@Path("/subroute")`
+  - HTTP method can also be described e.g 
+  ```
+  > @GET
+  > @POST
+  > @DELETE
+  > @PUT
+  ```
+  - To get parameters from URIs, an id for example, you can define them in your route then using the annotation
+  ```
+  > @Path("/route/{id})
+  > public void getElement(@PathParam("id") int id)
+  ```
   in front  of the method parameter declared for the id.
   
-  Create a class extending Application from jax rs core and annoted with 
-  	> @@ApplicationPath("rest")
+  Create a class extending Application from jax rs core and annoted with `@ApplicationPath("rest")`
 	
 # Thank you	
 ***Feel free to ask me anything here on github or my email mohamed.jridi.1@esprit.tn***
+
 *ESPRIT 4IoSys 2019-2020*
 
 
