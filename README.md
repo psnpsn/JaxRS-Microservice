@@ -22,6 +22,7 @@
   2. Extract to c:\maven
   3. Add M2_HOME and MAVEN_HOME to environement variables c:\maven\apache-maven-3.6.2 and add to PATH variable c:\maven\apache-maven-3.6.2\bin
   4. To verify installation open cmd and type mvn -version
+  ![Imgur Image](https://i.imgur.com/T3zFJsr.png)
   
 ## Download the project and Run
 
