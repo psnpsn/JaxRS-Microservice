@@ -9,9 +9,12 @@
  2. Extract to c:\wildfly ( or any other folder you prefer )
  3. Go to Eclipse > Help > Eclipse Marketplace...
  4. Look for JBoss Tools and install
+ ![Imgur Image](https://i.imgur.com/m0Pmzci.png)
  5. Got to Servers > Click "No server are available. Click this link to create a new server..."
+ ![Imgur Image](https://i.imgur.com/FM5QQzj.png)
  6. Look for Wildfly ( Wildfly 16 for me ) then Next
  7. Create new runtime and specifiy wildfly directory c:\wildfly in our case
+ ![Imgur Image](https://i.imgur.com/QKPSDw5.png)
  8. choose java-8-jdk as runtime ( if it does not exist add one )
  9. Finish
  
@@ -29,10 +32,12 @@
   1. Download the project as .zip then extract to your eclipse workspace OR run $ git clone https://github.com/psnpsn/JaxRS-Microservice.git into your eclipse workspace
   2. Go to eclipse File > Import
   3. Choose Existing Maven Project
+  ![Imgur Image](https://i.imgur.com/qOcCjXM.png)
   4. Add the downloaded project
   5. Fix any issue if there is any ( feel free to contact me about your issues )
   6. Right click on project > Run As > Maven install
-  7. Right click on your server > Add and Remove
+  7. Right click on your server > Add and Remove > Add your project
+  ![Imgur Image](https://i.imgur.com/IbdLfdV.png)
   8. Right click on your server > Start
   
 ## Testing with Postman
@@ -51,10 +56,12 @@
 	    <id>0</id>
     </employee>
   5. Send
+  ![Imgur Image](https://i.imgur.com/ubMHESY.png)
   ### Get All Emlpoyees
   1. With your wildfly server running in eclipse type your endpoint address http://localhost:8080/MS-test/employee/getAll
   2. Choose your http method as GET
   3. Send
+  ![Imgur Image](https://i.imgur.com/MJ3RmIL.png)
   ### Get One Emloyee by Id 
   1. With your wildfly server running in eclipse type your endpoint address http://localhost:8080/MS-test/employee/0/get
   2. Choose your http method as GET
@@ -63,6 +70,7 @@
   1. With your wildfly server running in eclipse type your endpoint address http://localhost:8080/MS-test/employee/0/delete
   2. Choose your http method as DELETE
   3. Send
+  ![Imgur Image](https://i.imgur.com/0XY9Rog.png)
   
   
 ## Create your own application
