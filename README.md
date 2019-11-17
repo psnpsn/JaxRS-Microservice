@@ -1,8 +1,10 @@
-# JaxRS-Microservice
-### this tutorial was made for windows
+# Microservice CRUD Example using Wildfly Jax-RS 
+### this tutorial was made for educational purposes
+
 ## You need the following
  - Eclipse
  - JDK 8
+ 
 ## Installing Wildfly
 ( I have used Wildfly 16 )
  1. Download [Wildfly zip](https://wildfly.org/downloads/) file
@@ -18,7 +20,6 @@
  8. choose java-8-jdk as runtime ( if it does not exist add one )
  9. Finish
  
-
 ## Installing Maven
 ( Maven 3.6.2 )
   1. Download [Maven](https://maven.apache.org/download.cgi) Binary zip file
@@ -28,7 +29,6 @@
   ![Imgur Image](https://i.imgur.com/T3zFJsr.png)
   
 ## Download the project and Run
-
   1. Download the project as .zip then extract to your eclipse workspace OR run $ git clone https://github.com/psnpsn/JaxRS-Microservice.git into your eclipse workspace
   2. Go to eclipse File > Import
   3. Choose Existing Maven Project
@@ -41,10 +41,8 @@
   8. Right click on your server > Start
   
 ## Testing with Postman
-  
   1. Download [Postman](https://www.getpostman.com/downloads/) and install
   2. Open Postman and connect ( or create account )
-  
   ### add Employee
   1. With your wildfly server running in eclipse type your endpoint address http://localhost:8080/MS-test/employee/add
   2. Choose your http method as POST
@@ -74,6 +72,44 @@
   
   
 ## Create your own application
+
+  ### Configuration
+  - Create new dynamic web project
+  - Convert project to maven project ( right click > configure > )
+  - Modify pom.xml ( copy from another project )
+  - Modify web.xml ( copy from another project )
+  ### Packaging
+  - model : for storing your models
+  - controller : for your rest api controllers
+  - service : for your services
+  - utils : for your utilitairies classes
+  - repository : for your database operations
+  ### Classes
+   In our case, models classes declaration begins with 
+   	> @XmlRootElement(name = "employee") 
+   	leaving the attribute name will take your class name by default
+   A rest api controller should always start with these annotations
+   	> @Path("/route")
+	> @Consumes(MediaType.APPLICATION_XML)
+	> @Produces(MediaType.APPLICATION_XML)
+  These will tell that our route is /route and the body of our HTTP request will be XML for both consuming and exposing.
+  Every method inside this controller will have their own route defined with annotations above the declaration
+  	> @Path("/subroute")
+  HTTP method can also be described e.g 
+  	> @GET
+	> @POST
+	> @DELETE
+	> @PUT
+  To get parameters from URIs, an id for example, you can define them in your route then using the annotation
+  	> @Path("/route/{id})
+	> public void getElement(@PathParam("id") int id)
+  in front  of the method parameter declared for the id.
   
-  
+  Create a class extending Application from jax rs core and annoted with 
+  	> @@ApplicationPath("rest")
+	
+# Thank you	
+***Feel free to ask me anything here on github or my email mohamed.jridi.1@esprit.tn***
+*ESPRIT 4IoSys 2019-2020*
+
 
